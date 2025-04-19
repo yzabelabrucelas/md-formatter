@@ -37,7 +37,7 @@ function convertToMarkdown(data) {
   const lines = data.trim().split("\n");
   if (lines.length === 0) return "";
   const header = lines[0].split("\t").map((item) => item.trim());
-  const separator = header.map(() => "---").join("|");
+  const separator = header.map(() => ":---:").join("|");
   const body = lines
     .slice(1)
     .map((line) =>
@@ -53,44 +53,4 @@ function convertToMarkdown(data) {
 function convertToTabular(data) {
   // Replace this with your actual Tabular conversion logic
   return data; // For now, just returns the original data
-}
-
-// plxformatter script
-function formatAndCopy() {
-  const paymentIdsTextarea = document.getElementById("paymentIds");
-  const paymentIds = paymentIdsTextarea.value.trim();
-
-  if (paymentIds) {
-    // Assuming payment IDs are separated by newlines or commas
-    const idArray = paymentIds
-      .split(/[\n,]+/)
-      .map((id) => id.trim())
-      .filter((id) => id !== "");
-
-    if (idArray.length > 0) {
-      const formattedParameters = idArray
-        .map((id) => `paymentId=${id}`)
-        .join("&");
-
-      // Create a temporary textarea to copy the formatted text
-      const tempTextarea = document.createElement("textarea");
-      tempTextarea.value = formattedParameters;
-      document.body.appendChild(tempTextarea);
-      tempTextarea.select();
-      document.execCommand("copy");
-      document.body.removeChild(tempTextarea);
-
-      // Optional: Provide visual feedback
-      const formatButton = document.querySelector(".format-button button");
-      const originalText = formatButton.textContent.trim();
-      formatButton.textContent = "Copied!";
-      setTimeout(() => {
-        formatButton.textContent = originalText;
-      }, 1500);
-    } else {
-      alert("Please enter valid Payment IDs.");
-    }
-  } else {
-    alert("Please enter Payment IDs.");
-  }
 }

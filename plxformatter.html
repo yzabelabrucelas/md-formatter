@@ -17,12 +17,12 @@
 
         <div class="">
             <h3 class="title-2">PLX Parameter Formatter</h3>
-            <p for="paymentIds" class="form-label">Insert Payment IDs here</p>
+            <p for="paymentIds" class="form-label">Insert Payment IDs here (one item per line):</p>
 
-            <textarea class="form-control-input" id="paymentIds" placeholder="" style="width: 500px;height:250px;"></textarea>
+            <textarea class="form-control-input" id="inputOutputArea" placeholder=""></textarea>
 
             <div class="format-button">
-                <button class="btn btn-primary" onclick="formatAndCopy()">
+                <button class="btn btn-primary" id="processButton">
                     <ion-icon name="copy-outline"></ion-icon>
                     Format and Copy
                 </button>
@@ -32,7 +32,8 @@
         <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
         <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-        <script src="script.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <script src="plxconvert.js"></script>
         </script>
     </body>
 

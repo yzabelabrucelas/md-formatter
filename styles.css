@@ -51,23 +51,8 @@ body {
 }
 
 /* md-converter style */
-textarea {
-  /* width: 100%;
-  min-height: 200px;
-  height: 500%; */
-
-  width: 300px;
-  height: 200px;
-
-  margin-bottom: 15px;
-  padding: 10px;
-  border: 1px solid #ced4da;
-  /* Light gray border */
-  border-radius: 4px;
-  box-sizing: border-box;
-  font-family: monospace;
-  /* For tabular data */
-  font-size: 14px;
+.col-md-6 {
+  min-width: 600px;
 }
 
 .output-section {
@@ -75,7 +60,33 @@ textarea {
 }
 
 .copy-button {
-  margin-top: 5px;
+  margin-top: -20px;
+  justify-content: right;
+}
+
+.form-control-input {
+  height: 433px;
+  width: 530px;
+  margin-top: 40px;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-family: monospace;
+  font-size: 14px;
+  justify-content: center;
+  resize: none;
+}
+
+.form-control-output {
+  height: 150px;
+  width: 576px;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-family: monospace;
+  font-size: 14px;
+  justify-content: center;
+  resize: none;
 }
 
 /* plxformatter style */
@@ -86,7 +97,7 @@ textarea {
 }
 .form-label {
   display: block;
-  margin-bottom: 5px;
+  /* margin-bottom: 5px; */
   color: #495057;
   font-weight: bold;
   text-align: center;

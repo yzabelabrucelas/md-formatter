@@ -59,11 +59,6 @@ body {
   margin-top: 20px;
 }
 
-.copy-button {
-  margin-top: -20px;
-  justify-content: right;
-}
-
 .form-control-input {
   height: 433px;
   width: 530px;
@@ -103,7 +98,7 @@ body {
   text-align: center;
 }
 .format-button {
-  margin-top: 20px;
+  margin-top: 10px;
   display: flex;
   justify-content: flex-end; /* Align button to the right */
 }

@@ -1,0 +1,98 @@
+body {
+  font-family: sans-serif;
+  background-color: #f8f9fa;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  padding-top: 60px; /* Adjust for potential fixed header */
+}
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+/* index style */
+.card {
+  width: 300px;
+  height: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #dee2e6;
+  border-radius: 5px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+.card-title {
+  text-align: center;
+  padding: 65px;
+}
+.card-body {
+  padding: 20px;
+}
+.card-button {
+  cursor: pointer;
+}
+.card-button:hover {
+  opacity: 0.8;
+  /* Optional: Add a slight visual feedback on hover */
+}
+.footer {
+  margin-top: auto;
+  text-align: center;
+  color: #6c757d;
+  font-size: 0.8rem;
+  padding-bottom: 20px;
+}
+
+/* md-converter style */
+textarea {
+  /* width: 100%;
+  min-height: 200px;
+  height: 500%; */
+
+  width: 300px;
+  height: 200px;
+
+  margin-bottom: 15px;
+  padding: 10px;
+  border: 1px solid #ced4da;
+  /* Light gray border */
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-family: monospace;
+  /* For tabular data */
+  font-size: 14px;
+}
+
+.output-section {
+  margin-top: 20px;
+}
+
+.copy-button {
+  margin-top: 5px;
+}
+
+/* plxformatter style */
+
+.title-2 {
+  margin-top: 2px;
+  text-align: center;
+}
+.form-label {
+  display: block;
+  margin-bottom: 5px;
+  color: #495057;
+  font-weight: bold;
+  text-align: center;
+}
+.format-button {
+  margin-top: 20px;
+  display: flex;
+  justify-content: flex-end; /* Align button to the right */
+}

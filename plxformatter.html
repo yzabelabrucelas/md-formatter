@@ -14,17 +14,29 @@
         <div class="jumbotron bg-light text-center mb-4">
             <h1 class="display-4">Payments Formatter</h1>
         </div>
-
+        
         <div class="">
-            <h3 class="title-2">PLX Parameter Formatter</h3>
-            <p for="paymentIds" class="form-label">Insert Payment IDs here (one item per line):</p>
+            <h5 class="title-2">PLX Parameter Formatter</h5>
 
-            <textarea class="form-control-input" id="inputOutputArea" placeholder=""></textarea>
+            <div class="form-group">
+                <select id="delimiter">
+                    <option value="">-- Choose a Delimiter: --</option>
+                    <option value=",">Comma (,)</option>
+                    <option value=";">Semicolon (;)</option>
+                    <option value="|">Pipe (|)</option>
+                    <option value="plx">PLX Format</option>
+                </select>
+            </div>
+
+            <p for="paymentIds" class="form-label">Enter Payment IDs (one per line):</p>
+            <textarea class="form-control-input-plx" id="inputOutputArea" placeholder=""></textarea>
 
             <div class="format-button">
-                <button class="btn btn-primary" id="processButton">
-                    <ion-icon name="copy-outline"></ion-icon>
-                    Format and Copy
+                <button class="btn btn-danger btn-formats" id="clearContents" onclick="clearContents()">
+                    <ion-icon name="trash-outline"></ion-icon> Clear Contents
+                </button>
+                <button class="btn btn-primary btn-formats" id="processButton" onclick="formatCopy()">
+                    <ion-icon name="copy-outline"></ion-icon> Format and Copy
                 </button>
             </div>
 

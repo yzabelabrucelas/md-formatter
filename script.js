@@ -14,11 +14,7 @@ function copyToClipboard(elementId) {
   document.execCommand("copy");
   // Optional: Provide visual feedback
   const copyButton = textarea.nextElementSibling;
-  const originalText = copyButton.textContent.trim();
   copyButton.textContent = "Copied!";
-  setTimeout(() => {
-    copyButton.textContent = originalText;
-  }, 1500);
 }
 
 // You would add your JavaScript logic here to convert the input data

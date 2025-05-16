@@ -87,18 +87,51 @@ body {
 /* plxformatter style */
 
 .title-2 {
-  margin-top: 2px;
+  margin-top: -50px;
   text-align: center;
+  
 }
 .form-label {
   display: block;
-  /* margin-bottom: 5px; */
   color: #495057;
   font-weight: bold;
+  font-style: italic;
+  text-align: center;
+}
+
+.form-control-input-plx {
+  height: 433px;
+  width: 1000px;
+  margin-top: 15px;
+  border: 5px solid #ced4da;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-family: monospace;
+  font-size: 14px;
+  justify-content: center;
+  resize: none;
+}
+.form-group {
+  padding-left: 350px;
+  margin-top: 20px;
+}
+
+select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 300px;
+  font-size: 16px;
   text-align: center;
 }
 .format-button {
-  margin-top: 10px;
+  margin-top: -10px;
   display: flex;
-  justify-content: flex-end; /* Align button to the right */
+  /* justify-content: flex-end; Align button to the right */
+  justify-content: center;
+}
+
+.btn-formats {
+  margin-left: 15px;
+  margin-top: 20px;
 }

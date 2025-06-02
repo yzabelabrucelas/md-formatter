@@ -59,11 +59,27 @@ body {
   margin-top: 20px;
 }
 
+.btn-md-formats-left {
+  margin-left: 245px;
+  margin-top: 20px;
+}
+
+.btn-md-formats-right {
+  margin-left: 290px;
+  margin-top: 20px;
+}
+
+
+.label-formatter {
+  margin-bottom:10px;
+  font-weight: bold;
+}
 .form-control-input {
   height: 433px;
   width: 530px;
-  margin-top: 40px;
-  border: 1px solid #ced4da;
+  margin-top: -10px;
+  margin-left: 40px;
+  border: 6px solid #ced4da;
   border-radius: 4px;
   box-sizing: border-box;
   font-family: monospace;
@@ -87,9 +103,8 @@ body {
 /* plxformatter style */
 
 .title-2 {
-  margin-top: -50px;
+  margin-top: -70px;
   text-align: center;
-  
 }
 .form-label {
   display: block;

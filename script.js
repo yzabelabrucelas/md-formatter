@@ -1,52 +1,68 @@
-//index script
-function showAlert(message) {
-  alert(message);
-}
-
 function redirectTo(url) {
   window.location.href = url;
 }
 
-// md-converter script
-function copyToClipboard(elementId) {
-  const textarea = document.getElementById(elementId);
-  textarea.select();
-  document.execCommand("copy");
-  // Optional: Provide visual feedback
-  const copyButton = textarea.nextElementSibling;
-  copyButton.textContent = "Copied!";
+const inputText = document.getElementById("inputText");
+const outputMarkdown = document.getElementById("outputMarkdown");
+const clearButton = document.getElementById("clearButton");
+const copyButton = document.getElementById("copyButton");
+
+function convertToMarkdownTable(text) {
+  const lines = text.trim().split("\n");
+  if (lines.length === 0) {
+    return "";
+  }
+
+  const data = lines.map((line) => line.split("\t"));
+  const columnWidths = [];
+  data.forEach((row) => {
+    row.forEach((cell, colIndex) => {
+      if (!columnWidths[colIndex]) {
+        columnWidths[colIndex] = 0;
+      }
+      columnWidths[colIndex] = Math.max(columnWidths[colIndex], cell.length);
+    });
+  });
+
+  let markdownTable = "";
+  const header = data[0];
+  markdownTable +=
+    header.map((cell, i) => cell.padEnd(columnWidths[i])).join(" | ") + "\n";
+  markdownTable +=
+    columnWidths.map((width) => "-".repeat(width)).join(" | ") + "\n";
+
+  for (let i = 1; i < data.length; i++) {
+    const row = data[i];
+    markdownTable +=
+      row.map((cell, j) => cell.padEnd(columnWidths[j] || 0)).join(" | ") +
+      "\n";
+  }
+
+  return markdownTable;
 }
 
-// You would add your JavaScript logic here to convert the input data
-// and populate the markdownOutput and tabularOutput textareas.
-document.getElementById("inputData").addEventListener("input", function () {
-  const input = this.value;
-  // Example (replace with your actual conversion logic)
-  const markdown = convertToMarkdown(input);
-  const tabular = convertToTabular(input);
-  document.getElementById("markdownOutput").value = markdown;
-  document.getElementById("tabularOutput").value = tabular;
+inputText.addEventListener("input", () => {
+  const pastedText = inputText.value;
+  outputMarkdown.value = convertToMarkdownTable(pastedText);
 });
 
-function convertToMarkdown(data) {
-  // Replace this with your actual Markdown conversion logic
-  const lines = data.trim().split("\n");
-  if (lines.length === 0) return "";
-  const header = lines[0].split("\t").map((item) => item.trim());
-  const separator = header.map(() => ":---:").join("|");
-  const body = lines
-    .slice(1)
-    .map((line) =>
-      line
-        .split("\t")
-        .map((item) => item.trim())
-        .join("|")
-    )
-    .join("\n");
-  return header.join("|") + "\n" + separator + "\n" + body;
-}
+clearButton.addEventListener("click", () => {
+  inputText.value = "";
+  outputMarkdown.value = "";
+});
 
-function convertToTabular(data) {
-  // Replace this with your actual Tabular conversion logic
-  return data; // For now, just returns the original data
-}
+copyButton.addEventListener("click", () => {
+  if (outputMarkdown.value) {
+    outputMarkdown.select();
+
+    try {
+      document.execCommand("copy");
+      alert("Copied to clipboard!");
+    } catch (err) {
+      console.error("Failed to copy text: ", err);
+      alert("Failed to copy!");
+    }
+  } else {
+    alert("Nothing to copy!");
+  }
+});

@@ -17,30 +17,26 @@
 
         <div class="container">
             <div class="row">
-                <div class="col-md-6">
-                    <h3 class="text-center">Text/Table to Markdown Converter</h3>
-                    <p for="inputData" class="form-label">Paste your Google Sheets data here:</p>
-                    <textarea class="form-control-input" id="inputData" placeholder=""></textarea>
-                </div>
-                <div class="col-md-6">
+                <h4 class="text-center title-2">Text/Table to Markdown Converter</h4>
 
-                    <h3 class="text-center">Output</h3>
-                    <div class="output-section mt-5">
-                        <label for="markdownOutput" class="form-label text-left">Markdown</label>
-                        <textarea class="form-control-output" id="markdownOutput" placeholder="" readonly></textarea>
-                        <div class="format-button">
-                            <button class="btn btn-primary" onclick="copyToClipboard('markdownOutput')">
-                                <ion-icon name="copy-outline"></ion-icon>
-                                Copy
-                            </button>
-                        </div>
+
+                <div class="col-md-6">
+                    <h4 class="text-center label-formatter">Input</h4>
+                    <div class="output-section mt-4">
+                        <textarea class="form-control-input" id="inputText" placeholder=""></textarea>
+                        <button class="btn btn-danger btn-md-formats-left" id="clearButton"
+                            onclick="clearContents()">
+                            <ion-icon name="trash-outline"></ion-icon> Clear Contents
+                        </button>
                     </div>
+                </div>
 
-                    <div class="output-section">
-                        <label for="tabularOutput" class="form-label text-left">HTML Table</label>
-                        <textarea class="form-control-output" id="tabularOutput" placeholder="" readonly></textarea>
-                        <div class="format-button">
-                            <button class="btn btn-primary" onclick="copyToClipboard('tabularOutput')">
+                <div class="col-md-6">
+                    <h4 class="text-center label-formatter">Output</h4>
+                    <div class="output-section mt-4">
+                        <textarea class="form-control-input" id="outputMarkdown" placeholder="" readonly></textarea>
+                        <div class="format-button-copy">
+                            <button class="btn btn-primary btn-md-formats-right" id="copyButton">
                                 <ion-icon name="copy-outline"></ion-icon>
                                 Copy
                             </button>

@@ -7,6 +7,7 @@ body {
   min-height: 100vh;
   padding-top: 60px; /* Adjust for potential fixed header */
 }
+
 .container {
   display: flex;
   justify-content: center;
@@ -17,8 +18,8 @@ body {
 
 /* index style */
 .card {
-  width: 300px;
-  height: 250px;
+  width: 250px;
+  height: 200px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -28,20 +29,36 @@ body {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   text-align: center;
 }
-.card-title {
+
+.card-title-1 {
   text-align: center;
-  padding: 65px;
+  padding: 30px;
 }
+
+.card-title-2 {
+  text-align: center;
+  padding: 50px;
+  padding-top: 40px;
+}
+
+.card-title-3 {
+  text-align: center;
+  padding: 60px;
+  padding-top: 55px;
+}
+
 .card-body {
   padding: 20px;
 }
+
 .card-button {
   cursor: pointer;
 }
+
 .card-button:hover {
   opacity: 0.8;
-  /* Optional: Add a slight visual feedback on hover */
 }
+
 .footer {
   margin-top: auto;
   text-align: center;
@@ -69,9 +86,8 @@ body {
   margin-top: 20px;
 }
 
-
 .label-formatter {
-  margin-bottom:10px;
+  margin-bottom: 10px;
   font-weight: bold;
 }
 .form-control-input {
@@ -142,11 +158,22 @@ select {
 .format-button {
   margin-top: -10px;
   display: flex;
-  /* justify-content: flex-end; Align button to the right */
   justify-content: center;
 }
 
 .btn-formats {
   margin-left: 15px;
   margin-top: 20px;
+}
+
+/* jsonformatter style */
+
+.format-button-json {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.btn-md-formats-right-copy {
+  margin-right: 10px;
 }

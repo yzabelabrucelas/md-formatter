@@ -2,6 +2,7 @@ function redirectTo(url) {
   window.location.href = url;
 }
 
+// mdconverter script
 const inputText = document.getElementById("inputText");
 const outputMarkdown = document.getElementById("outputMarkdown");
 const clearButton = document.getElementById("clearButton");
@@ -49,9 +50,14 @@ inputText.addEventListener("input", () => {
 clearButton.addEventListener("click", () => {
   inputText.value = "";
   outputMarkdown.value = "";
+  copyButton.disabled = false;
+  inputText.disabled = false;
 });
 
 copyButton.addEventListener("click", () => {
+  inputText.disabled = true;
+  copyButton.disabled = true;
+
   if (outputMarkdown.value) {
     outputMarkdown.select();
 
